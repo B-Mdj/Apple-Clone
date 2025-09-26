@@ -73,6 +73,9 @@ body {
   flex-direction: column;
   gap: 4px;
 }
+.support_details p {
+  font-weight: 700;
+}
 .products {
   padding-left: 140px;
   margin-bottom: 60px;
