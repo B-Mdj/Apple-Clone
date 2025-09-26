@@ -22,9 +22,24 @@ body {
   font-size: 12px;
   font-weight: 400;
 }
+.contents {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 400;
+}
+.icon {
+  display: flex;
+  gap: 24px;
+}
 .navimg {
   width: 14px;
   height: 14px;
+}
+.navimg:last-child {
+  display: none;
 }
 .donation {
   width: 100vw;
@@ -33,6 +48,24 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 14px;
+}
+@media (max-width: 768px) {
+  .navbar {
+    height: 48px;
+    justify-content: space-between;
+  }
+  .contents {
+    display: none;
+  }
+  .navimg:last-child {
+    display: block;
+  }
+  .ai p:nth-child(1) {
+    font-size: 42px;
+  }
+  .ai p:nth-child(2) {
+    font-size: 22px;
+  }
 }
 .ai {
   display: flex;
@@ -154,10 +187,10 @@ body {
   align-items: center;
 }
 .bigcontainer {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
   justify-content: center;
-  gap: 12px;
 }
 .container1 {
   width: 942px;
