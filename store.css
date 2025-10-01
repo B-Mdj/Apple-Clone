@@ -22,10 +22,14 @@ body {
   position: fixed;
   font-size: 12px;
   font-weight: 400;
+  z-index: 10;
 }
 .navimg {
   width: 14px;
   height: 14px;
+}
+.rainbow {
+  width: 100vw;
 }
 .bar {
   width: 100vw;
@@ -110,9 +114,8 @@ body {
 .title p:nth-child(2) {
   color: #6e6e73;
 }
-.latest_card_container {
+.scroller {
   padding-left: 140px;
-  gap: 20px;
   width: 100%;
   height: fit-content;
   white-space: nowrap;
@@ -120,14 +123,20 @@ body {
   overflow-x: scroll;
   margin-bottom: 60px;
 }
+::-webkit-scrollbar {
+  display: none;
+}
 .latest_card {
-  display: inline-block;
-  vertical-align: top;
   width: 400px;
   height: 500px;
-  border-radius: 18px;
-  margin-right: 20px;
   padding: 30px;
+  box-shadow: 2px 4px 12px 0px rgba(0, 0, 0, 0.08);
+}
+#board {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 20px;
+  border-radius: 18px;
   box-shadow: 2px 4px 12px 0px rgba(0, 0, 0, 0.08);
 }
 .latest_card p:nth-child(1) {
@@ -205,27 +214,14 @@ body {
   background-size: cover;
   background-position: center;
 }
-.perso_card_container {
-  padding-left: 140px;
-  width: 100%;
-  height: fit-content;
-  white-space: nowrap;
-  overflow-y: hidden;
-  overflow-x: scroll;
-  margin-bottom: 60px;
-}
 .big_perso_card {
   width: 400px;
   height: 500px;
-  border-radius: 18px;
   background: url(./bigairpodthing.jpg);
   background-size: cover;
   padding: 30px;
   padding-top: 53px;
   text-wrap: wrap;
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 20px;
 }
 .big_perso_card_details {
   font-size: 26px;
@@ -235,25 +231,15 @@ body {
   background-color: #ffffff;
   width: 313px;
   height: 500px;
-  border-radius: 18px;
-  box-shadow: 2px 4px 12px 0px rgba(0, 0, 0, 0.08);
-  display: inline-block;
-  vertical-align: top;
   padding: 30px;
   padding-top: 71px;
-  margin-right: 20px;
 }
 .perso_card {
   background-color: #ffffff;
   width: 313px;
   height: 500px;
-  border-radius: 18px;
-  box-shadow: 2px 4px 12px 0px rgba(0, 0, 0, 0.08);
-  display: inline-block;
-  vertical-align: top;
   padding: 30px;
   padding-top: 71px;
-  margin-right: 20px;
   position: relative;
 }
 .perimg {
@@ -307,27 +293,14 @@ body {
   top: 452px;
   left: 30px;
 }
-.hol_card_container {
-  padding-left: 140px;
-  width: 100%;
-  height: fit-content;
-  white-space: nowrap;
-  overflow-y: hidden;
-  overflow-x: scroll;
-  margin-bottom: 60px;
-}
 .big_hol_card {
   width: 400px;
   height: 500px;
-  border-radius: 18px;
   background: url(./bigifonthing.jpg);
   background-size: cover;
   padding: 30px;
   padding-top: 53px;
   text-wrap: wrap;
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 20px;
 }
 .big_hol_card_details {
   font-size: 26px;
@@ -337,13 +310,8 @@ body {
   background-color: #ffffff;
   width: 313px;
   height: 500px;
-  border-radius: 18px;
-  box-shadow: 2px 4px 12px 0px rgba(0, 0, 0, 0.08);
-  display: inline-block;
-  vertical-align: top;
   padding: 30px;
   padding-top: 71px;
-  margin-right: 20px;
   position: relative;
 }
 .hol_card p:nth-of-type(1) {
@@ -367,13 +335,8 @@ body {
   background-color: #ffffff;
   width: 313px;
   height: 500px;
-  border-radius: 18px;
-  box-shadow: 2px 4px 12px 0px rgba(0, 0, 0, 0.08);
-  display: inline-block;
-  vertical-align: top;
   padding: 30px;
   padding-top: 71px;
-  margin-right: 20px;
   position: relative;
 }
 .hol_card1 p:nth-of-type(1) {
@@ -393,51 +356,185 @@ body {
   top: 452px;
   left: 30px;
 }
-.only_container {
-  padding-left: 140px;
-  width: 100%;
-  height: fit-content;
-  white-space: nowrap;
-  overflow-y: hidden;
-  overflow-x: scroll;
-  margin-bottom: 60px;
-}
-.only_container div:nth-of-type(1) {
-  background: url(./pickup.jpg);
-  background-size: cover;
-  /* font-size: 26px;
-  font-weight: 700; */
-  text-wrap: wrap;
-}
-.only_container div:nth-of-type(4) {
-  background: url(./tradesomething2.jpg);
-  background-size: cover;
-}
-.only_container div:nth-of-type(5) {
-  background: url(./person.jpg);
-  background-size: cover;
-}
 .only_card {
   width: 480px;
   height: 500px;
-  border-radius: 18px;
-  display: inline-block;
-  vertical-align: top;
   padding: 30px;
-  margin-right: 20px;
+  background-color: #ffffff;
+}
+.only_card:nth-of-type(1) {
+  background-image: url(./pickup.jpg);
+  background-size: cover;
+  font-size: 26px;
+  font-weight: 700;
+  text-wrap: wrap;
+  padding-top: 50px;
+}
+.only_card:nth-of-type(4) {
+  background-image: url(./tradesomething2.jpg);
+  background-size: cover;
+}
+.only_card:nth-of-type(5) {
+  background-image: url(./person.jpg);
+  background-size: cover;
+}
+.only_card:nth-of-type(4) h6 {
+  color: #6e6e73;
+  font-size: 12px;
+  font-weight: 700;
+}
+.only_card:nth-of-type(5) h6 {
+  color: #6e6e73;
+  font-size: 12px;
+  font-weight: 700;
+}
+.only_card:nth-of-type(4) p {
+  font-size: 25px;
+  font-weight: 700;
+  text-wrap: wrap;
+}
+.only_card:nth-of-type(5) p {
+  font-size: 25px;
+  font-weight: 700;
+  text-wrap: wrap;
 }
 .card_box {
   width: 313px;
   height: 500px;
-  border-radius: 18px;
-  display: inline-block;
-  vertical-align: top;
-  padding: 30px;
-  margin-right: 20px;
 }
 .box {
   width: 313px;
   height: 240px;
-  border-radius: 18px;
   background-color: #ffffff;
+  border-radius: 18px;
+  margin-bottom: 20px;
+  padding: 30px;
+  padding-top: 82px;
+  font-size: 22px;
+  font-weight: 700;
+  text-wrap: wrap;
+}
+.exp_card {
+  width: 480px;
+  height: 500px;
+  background-color: #ffffff;
+  padding: 30px;
+}
+.exp_card:nth-of-type(1) {
+  background: url(./applemusic.jpg);
+  background-size: cover;
+}
+.exp_card:nth-of-type(2) {
+  background: url(./charliebrown.png);
+  background-size: cover;
+}
+.exp_card:nth-of-type(3) {
+  background: url(./sixservices.jpg);
+  background-size: cover;
+}
+.exp_card:nth-of-type(4) {
+  background: url(./appleai.jpg);
+  background-size: cover;
+}
+.exp_card h6 {
+  color: #6e6e73;
+  font-size: 12px;
+  font-weight: 700;
+}
+.exp_card:nth-of-type(2) h6 {
+  color: #f5f5f7;
+}
+.exp_card:nth-of-type(2) h1 {
+  color: #ffffff;
+}
+.exp_card h1 {
+  font-size: 26px;
+  font-weight: 700;
+  text-wrap: wrap;
+  padding-top: 8px;
+}
+.exp_card:nth-of-type(1) p {
+  font-size: 17px;
+  font-weight: 400;
+  text-wrap: wrap;
+  padding-top: 10px;
+}
+.spec_card {
+  width: 400px;
+  height: 500px;
+  background-color: #ffffff;
+  padding: 30px;
+}
+.spec_card:nth-of-type(1) {
+  background: url(./carrierdeals.jpg);
+  background-size: cover;
+}
+.spec_card:nth-of-type(2) {
+  background: url(./education.jpg);
+  background-size: cover;
+}
+.spec_card:nth-of-type(3) {
+  background: url(./refurbished.jpg);
+  background-size: cover;
+}
+.spec_card:nth-of-type(4) {
+  background: url(./biznes.jpg);
+  background-size: cover;
+}
+.spec_card:nth-of-type(5) {
+  background: url(./goverment.jpg);
+  background-size: cover;
+}
+.spec_card h6 {
+  color: #6e6e73;
+  font-size: 12px;
+  font-weight: 700;
+  padding-bottom: 7px;
+}
+.spec_card h1 {
+  font-size: 26px;
+  font-weight: 700;
+  text-wrap: wrap;
+}
+.spec_card:nth-of-type(4) h1 {
+  color: #ffffff;
+}
+.spec_card p {
+  font-size: 17px;
+  font-weight: 400;
+  text-wrap: wrap;
+}
+.links {
+  padding-left: 140px;
+}
+.links h2 {
+  font-size: 26px;
+  font-weight: 700;
+  padding-bottom: 24px;
+}
+.buttons {
+  padding-bottom: 100px;
+  display: flex;
+  gap: 12px;
+}
+.buttons p {
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid #1d1d1f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1d1d1f;
+}
+.buttons p:nth-of-type(1) {
+  width: 125px;
+}
+.buttons p:nth-of-type(2) {
+  width: 137px;
+}
+.buttons p:nth-of-type(3) {
+  width: 91px;
+}
+.buttons p:nth-of-type(4) {
+  width: 114px;
 }

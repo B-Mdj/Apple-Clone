@@ -38,7 +38,7 @@ body {
   width: 14px;
   height: 14px;
 }
-.navimg:last-child {
+.navimg:nth-of-type(3) {
   display: none;
 }
 .donation {
@@ -707,6 +707,10 @@ body {
   filter: grayscale(0);
 }
 @media (max-width: 768px) {
+  .donation {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
   .navbar {
     height: 48px;
     justify-content: space-between;
@@ -781,6 +785,10 @@ body {
   }
 }
 @media (max-width: 390px) {
+  .donation {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
   .ai:first-child {
     background: url(./Figure-4.png);
     background-size: cover;
