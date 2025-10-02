@@ -666,6 +666,9 @@ body {
   width: 196px;
   height: 196px;
   border-radius: 8px;
+  position: absolute;
+  left: 15px;
+  bottom: 20px;
 }
 .ani_card5 p {
   position: absolute;
